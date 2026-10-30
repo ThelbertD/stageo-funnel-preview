@@ -1,0 +1,612 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Stageo Pro Invitation (preview)</title></head><body style="margin:0">
+<!-- =====================================================================
+  STAGEO · PAGE 1 · PRO INVITATION OPT-IN  (Campaign A + C retargeting)
+  Paste this whole file into ONE GHL "Custom JS/HTML" element.
+  Edit the CONFIG block in the <script> at the bottom before publishing.
+====================================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet" />
+
+<style>
+  #sgp, #sgp * { box-sizing: border-box; margin: 0; padding: 0; }
+  #sgp {
+    --cream: #FFF5E9; --cream2: #FFEBD4; --ink: #121212; --ink2: #3d3a36; --ink3: #6f6a63;
+    --orange: #F04E23; --orange2: #F7861F; --line: rgba(18,18,18,.12); --white: #fff;
+    --c-careers: #F04E23; --c-wellness: #22A06B; --c-wealth: #F5A524; --c-connection: #E0457B; --c-learning: #3B6FE0;
+    font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 17px; line-height: 1.6; color: var(--ink); background: var(--cream);
+    -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%;
+  }
+  #sgp a { color: inherit; }
+  #sgp img { max-width: 100%; display: block; }
+  #sgp .sg-wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 22px; }
+  #sgp .sg-display { font-family: 'Unbounded', 'Arial Black', sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1.04; }
+  #sgp .sg-mono { font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  #sgp .sg-or { color: var(--orange); }
+  #sgp section { padding: 88px 0; }
+  #sgp .sg-eyebrow { display: inline-block; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  #sgp h2.sg-display { font-size: clamp(30px, 4.2vw, 50px); margin-bottom: 18px; }
+  #sgp .sg-lead { font-size: 19px; color: var(--ink2); max-width: 680px; }
+  #sgp .sg-center { text-align: center; }
+  #sgp .sg-center .sg-lead { margin: 0 auto; }
+
+  /* Buttons */
+  #sgp .sg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 17px; text-decoration: none; border: 0; cursor: pointer; border-radius: 999px; padding: 18px 30px; background: var(--orange); color: #fff; transition: transform .15s ease, box-shadow .15s ease, background .15s; box-shadow: 0 10px 24px -10px rgba(240,78,35,.7); }
+  #sgp .sg-btn:hover { transform: translateY(-2px); background: #e0431a; box-shadow: 0 16px 30px -12px rgba(240,78,35,.8); }
+  #sgp .sg-btn:disabled { opacity: .7; cursor: wait; transform: none; }
+  #sgp .sg-btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); box-shadow: none; }
+  #sgp .sg-btn-ghost:hover { background: var(--ink); color: #fff; box-shadow: none; }
+  #sgp .sg-btn-sm { padding: 12px 20px; font-size: 15px; }
+
+  /* Top bar + header */
+  #sgp .sg-topbar { background: var(--ink); color: #fff; font-size: 14px; text-align: center; padding: 10px 16px; }
+  #sgp .sg-topbar b { color: var(--orange2); }
+  #sgp .sg-header { border-bottom: 1px solid var(--line); background: rgba(255,245,233,.92); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 50; }
+  #sgp .sg-header .sg-wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  #sgp .sg-logo { display: flex; align-items: center; gap: 10px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 24px; color: var(--orange); text-decoration: none; }
+  #sgp .sg-logo-mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--orange2), var(--orange)); display: grid; place-items: center; color: #fff; font-size: 18px; }
+
+  /* Hero */
+  #sgp .sg-hero { padding: 64px 0 80px; position: relative; }
+  #sgp .sg-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+  #sgp .sg-pill { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 16px; font-size: 14px; font-weight: 500; margin-bottom: 26px; }
+  #sgp .sg-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 0 rgba(240,78,35,.6); animation: sgPulse 1.8s infinite; }
+  @keyframes sgPulse { 0% { box-shadow: 0 0 0 0 rgba(240,78,35,.6);} 70% { box-shadow: 0 0 0 10px rgba(240,78,35,0);} 100% { box-shadow: 0 0 0 0 rgba(240,78,35,0);} }
+  #sgp .sg-hero h1 { font-size: clamp(38px, 5.6vw, 70px); margin-bottom: 24px; }
+  #sgp .sg-hero .sg-lead { margin-bottom: 30px; }
+  #sgp .sg-areas { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 34px; }
+  #sgp .sg-area { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 6px 13px; font-family: 'DM Mono', monospace; font-size: 13px; }
+  #sgp .sg-area i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  #sgp .sg-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); padding-top: 22px; max-width: 560px; }
+  #sgp .sg-stat + .sg-stat { border-left: 1px solid var(--line); padding-left: 20px; }
+  #sgp .sg-stat b { display: block; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 28px; line-height: 1.1; }
+  #sgp .sg-stat span { font-size: 14px; color: var(--ink3); }
+
+  /* Ticket / form card */
+  #sgp .sg-ticket { position: relative; background: var(--orange); color: #fff; border-radius: 22px; padding: 30px 30px 26px; box-shadow: 0 30px 60px -25px rgba(240,78,35,.65), 0 2px 0 rgba(0,0,0,.05); transform: rotate(-1.2deg); transition: transform .3s ease; }
+  #sgp .sg-ticket:hover, #sgp .sg-ticket:focus-within { transform: rotate(0deg); }
+  #sgp .sg-ticket::before, #sgp .sg-ticket::after { content: ""; position: absolute; width: 26px; height: 26px; border-radius: 50%; background: var(--cream); top: 132px; }
+  #sgp .sg-ticket::before { left: -13px; } #sgp .sg-ticket::after { right: -13px; }
+  #sgp .sg-ticket-top { display: flex; justify-content: space-between; gap: 10px; opacity: .92; margin-bottom: 14px; }
+  #sgp .sg-ticket-title { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; margin-bottom: 4px; }
+  #sgp .sg-price { display: flex; align-items: baseline; gap: 12px; margin: 10px 0 2px; }
+  #sgp .sg-price b { font-family: 'Unbounded', sans-serif; font-size: 56px; line-height: 1; }
+  #sgp .sg-price s { opacity: .8; font-size: 18px; }
+  #sgp .sg-perf { border-top: 2px dashed rgba(255,255,255,.55); margin: 22px -30px 20px; }
+  #sgp .sg-form { display: grid; gap: 12px; }
+  #sgp .sg-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  #sgp .sg-field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+  #sgp .sg-field input, #sgp .sg-field select { width: 100%; font: 500 16px 'DM Sans', sans-serif; color: var(--ink); background: #fff; border: 2px solid transparent; border-radius: 12px; padding: 13px 14px; outline: none; transition: border-color .15s; -webkit-appearance: none; appearance: none; }
+  #sgp .sg-field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23121212' stroke-width='2' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  #sgp .sg-field input:focus, #sgp .sg-field select:focus { border-color: var(--ink); }
+  #sgp .sg-field.sg-bad input, #sgp .sg-field.sg-bad select { border-color: #FFE24A; }
+  #sgp .sg-err { display: none; font-size: 13px; font-weight: 700; color: #FFE24A; margin-top: 4px; }
+  #sgp .sg-field.sg-bad .sg-err { display: block; }
+  #sgp .sg-ticket .sg-btn { width: 100%; background: var(--ink); box-shadow: none; margin-top: 4px; }
+  #sgp .sg-ticket .sg-btn:hover { background: #000; }
+  #sgp .sg-fine { font-size: 13px; line-height: 1.5; opacity: .92; margin-top: 12px; }
+  #sgp .sg-fine a { text-decoration: underline; }
+  #sgp .sg-terms-chip { display: flex; gap: 8px; align-items: flex-start; background: rgba(0,0,0,.14); border-radius: 12px; padding: 10px 12px; font-size: 13px; line-height: 1.45; margin-top: 12px; }
+
+  /* Problem */
+  #sgp .sg-dark { background: var(--ink); color: #fff; }
+  #sgp .sg-dark .sg-lead { color: rgba(255,255,255,.75); }
+  #sgp .sg-cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+  #sgp .sg-pcard { border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 26px; background: rgba(255,255,255,.03); }
+  #sgp .sg-pcard .sg-num { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 15px; color: var(--orange2); margin-bottom: 12px; }
+  #sgp .sg-pcard h3 { font-size: 20px; margin-bottom: 8px; }
+  #sgp .sg-pcard p { color: rgba(255,255,255,.7); font-size: 16px; }
+  #sgp .sg-turn { margin-top: 44px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(22px, 2.8vw, 32px); line-height: 1.2; }
+
+  /* Features */
+  #sgp .sg-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+  #sgp .sg-feat { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px; transition: transform .2s, box-shadow .2s; }
+  #sgp .sg-feat:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -22px rgba(0,0,0,.35); }
+  #sgp .sg-ico { width: 44px; height: 44px; border-radius: 12px; background: var(--cream2); display: grid; place-items: center; margin-bottom: 16px; color: var(--orange); }
+  #sgp .sg-ico svg { width: 22px; height: 22px; }
+  #sgp .sg-feat h3 { font-size: 18px; margin-bottom: 6px; }
+  #sgp .sg-feat p { font-size: 15px; color: var(--ink3); }
+
+  /* Steps */
+  #sgp .sg-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px; counter-reset: s; }
+  #sgp .sg-step { position: relative; border-top: 3px solid var(--ink); padding-top: 20px; }
+  #sgp .sg-step .sg-mono { color: var(--orange); }
+  #sgp .sg-step h3 { font-size: 20px; margin: 8px 0 6px; }
+  #sgp .sg-step p { font-size: 15px; color: var(--ink3); }
+
+  /* Catch / terms */
+  #sgp .sg-terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-top: 40px; }
+  #sgp .sg-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); font-size: 15px; }
+  #sgp .sg-table th, #sgp .sg-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  #sgp .sg-table th { font-family: 'DM Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; background: var(--cream2); }
+  #sgp .sg-table tr:last-child td { border-bottom: 0; }
+  #sgp .sg-table td:first-child { font-weight: 700; width: 34%; }
+  #sgp .sg-calc { background: var(--ink); color: #fff; border-radius: 22px; padding: 28px; }
+  #sgp .sg-calc h3 { font-family: 'Unbounded', sans-serif; font-size: 20px; margin-bottom: 4px; }
+  #sgp .sg-calc .sg-sub { color: rgba(255,255,255,.65); font-size: 14px; margin-bottom: 20px; }
+  #sgp .sg-slider { margin-bottom: 18px; }
+  #sgp .sg-slider-top { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; }
+  #sgp .sg-slider-top b { color: var(--orange2); font-size: 16px; }
+  #sgp input[type=range] { width: 100%; accent-color: var(--orange); height: 6px; cursor: pointer; }
+  #sgp .sg-out { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+  #sgp .sg-out div { background: rgba(255,255,255,.07); border-radius: 14px; padding: 14px; }
+  #sgp .sg-out small { display: block; color: rgba(255,255,255,.6); font-size: 12px; line-height: 1.4; }
+  #sgp .sg-out b { font-family: 'Unbounded', sans-serif; font-size: 19px; }
+  #sgp .sg-verdict { margin-top: 14px; border-radius: 14px; padding: 14px 16px; font-weight: 700; font-size: 15px; background: rgba(247,134,31,.18); border: 1px solid rgba(247,134,31,.45); }
+  #sgp .sg-calc .sg-note { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 12px; line-height: 1.5; }
+  #sgp .sg-calc a { color: var(--orange2); }
+
+  /* Testimonials (hidden until real quotes are added) */
+  #sgp .sg-quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+  #sgp .sg-quote { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+  #sgp .sg-quote p { font-size: 16px; margin-bottom: 14px; }
+  #sgp .sg-quote span { font-size: 14px; color: var(--ink3); }
+
+  /* FAQ */
+  #sgp .sg-faq { max-width: 820px; margin: 40px auto 0; }
+  #sgp .sg-q { border-bottom: 1px solid var(--line); }
+  #sgp .sg-q button { width: 100%; background: none; border: 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 22px 0; font: 700 18px 'DM Sans', sans-serif; color: var(--ink); }
+  #sgp .sg-q button span.sg-plus { flex: 0 0 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center; font-size: 18px; transition: transform .2s, background .2s; }
+  #sgp .sg-q.sg-open button span.sg-plus { transform: rotate(45deg); background: var(--orange); border-color: var(--orange); color: #fff; }
+  #sgp .sg-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  #sgp .sg-a p { padding: 0 46px 22px 0; color: var(--ink2); font-size: 16px; }
+
+  /* Final CTA */
+  #sgp .sg-final { background: var(--orange); color: #fff; text-align: center; }
+  #sgp .sg-final h2 { color: #fff; }
+  #sgp .sg-final .sg-lead { color: rgba(255,255,255,.9); margin: 0 auto 30px; }
+  #sgp .sg-final .sg-btn { background: var(--ink); box-shadow: none; }
+  #sgp .sg-final .sg-fine { max-width: 620px; margin: 16px auto 0; }
+
+  #sgp .sg-footer { background: var(--ink); color: rgba(255,255,255,.6); font-size: 14px; padding: 28px 0 100px; }
+  #sgp .sg-footer .sg-wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  #sgp .sg-footer a { color: rgba(255,255,255,.8); margin-left: 18px; text-decoration: none; }
+
+  /* Sticky mobile CTA */
+  #sgp .sg-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: rgba(18,18,18,.96); backdrop-filter: blur(8px); padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); display: none; align-items: center; justify-content: space-between; gap: 12px; transform: translateY(110%); transition: transform .3s ease; }
+  #sgp .sg-sticky.sg-show { transform: translateY(0); }
+  #sgp .sg-sticky small { color: rgba(255,255,255,.7); font-size: 12px; line-height: 1.3; }
+  #sgp .sg-sticky small b { color: #fff; font-size: 14px; display: block; }
+
+  /* Reveal */
+  #sgp .sg-rv { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  #sgp .sg-rv.sg-in { opacity: 1; transform: none; }
+
+  @media (max-width: 960px) {
+    #sgp .sg-hero-grid, #sgp .sg-terms-grid { grid-template-columns: 1fr; gap: 40px; }
+    #sgp .sg-ticket { transform: none; }
+    #sgp .sg-feat-grid, #sgp .sg-quotes { grid-template-columns: 1fr 1fr; }
+    #sgp .sg-steps { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+    #sgp .sg-cards3 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    #sgp { font-size: 16px; }
+    #sgp section { padding: 64px 0; }
+    #sgp .sg-hero { padding: 36px 0 56px; }
+    #sgp .sg-header .sg-btn { display: none; }
+    #sgp .sg-feat-grid, #sgp .sg-quotes, #sgp .sg-steps, #sgp .sg-row2, #sgp .sg-out { grid-template-columns: 1fr; }
+    #sgp .sg-stat b { font-size: 22px; }
+    #sgp .sg-stat + .sg-stat { padding-left: 12px; }
+    #sgp .sg-ticket { padding: 24px 20px 22px; }
+    #sgp .sg-perf { margin: 20px -20px 18px; }
+    #sgp .sg-sticky { display: flex; }
+    #sgp .sg-table td:first-child { width: 40%; }
+    #sgp .sg-footer a { margin: 0 14px 0 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #sgp *, #sgp .sg-rv { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+  }
+</style>
+
+<div id="sgp">
+
+  <div class="sg-topbar">Private invitation: <b>a free year of Stageo Pro</b> for coaches, tutors &amp; mentors. Places are limited.</div>
+
+  <header class="sg-header">
+    <div class="sg-wrap">
+      <a class="sg-logo" href="#sg-claim" aria-label="Stageo"><span class="sg-logo-mark">S</span>Stageo</a>
+      <a class="sg-btn sg-btn-sm" href="#sg-claim" data-sg-scroll>Claim my free Pro year</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="sg-hero">
+    <div class="sg-wrap sg-hero-grid">
+      <div>
+        <span class="sg-pill"><span class="sg-pulse"></span>By invitation, for experienced professionals</span>
+        <h1 class="sg-display">Your first year of Stageo Pro is <span class="sg-or">free.</span></h1>
+        <p class="sg-lead">People are looking for help. Be the human they find. Stageo gives you a bookable profile, built-in payments and live session rooms, and we're covering Pro for your first 12 months.</p>
+        <div class="sg-areas" aria-label="Growth areas">
+          <span class="sg-area"><i style="background:var(--c-careers)"></i>Careers</span>
+          <span class="sg-area"><i style="background:var(--c-wellness)"></i>Wellness</span>
+          <span class="sg-area"><i style="background:var(--c-wealth)"></i>Wealth</span>
+          <span class="sg-area"><i style="background:var(--c-connection)"></i>Connection</span>
+          <span class="sg-area"><i style="background:var(--c-learning)"></i>Learning</span>
+        </div>
+        <div class="sg-stats">
+          <div class="sg-stat"><b>500+</b><span>professionals</span></div>
+          <div class="sg-stat"><b>5</b><span>growth areas</span></div>
+          <div class="sg-stat"><b>~60 min</b><span>to a live profile</span></div>
+        </div>
+      </div>
+
+      <!-- Opt-in ticket -->
+      <div class="sg-ticket" id="sg-claim">
+        <div class="sg-ticket-top sg-mono"><span>Founding Pro</span><span>Admit one professional</span></div>
+        <div class="sg-ticket-title">Stageo Pro</div>
+        <div style="opacity:.92">12 months, on us</div>
+        <div class="sg-price"><b>$0</b><s>$708 a year</s></div>
+        <div class="sg-perf"></div>
+
+        <form class="sg-form" id="sg-form" novalidate>
+          <div class="sg-row2">
+            <div class="sg-field">
+              <label for="sg-fn">First name</label>
+              <input id="sg-fn" name="first_name" type="text" autocomplete="given-name" placeholder="Jane" />
+              <div class="sg-err">Please add your first name</div>
+            </div>
+            <div class="sg-field">
+              <label for="sg-area">Your growth area</label>
+              <select id="sg-area" name="growth_area">
+                <option value="">Choose one</option>
+                <option>Careers</option>
+                <option>Wellness</option>
+                <option>Wealth</option>
+                <option>Connection</option>
+                <option>Learning</option>
+              </select>
+              <div class="sg-err">Pick the closest one</div>
+            </div>
+          </div>
+          <div class="sg-field">
+            <label for="sg-em">Email</label>
+            <input id="sg-em" name="email" type="email" autocomplete="email" placeholder="jane@yourpractice.com" />
+            <div class="sg-err">Please enter a valid email</div>
+          </div>
+          <div class="sg-field">
+            <label for="sg-ph">Mobile <span style="font-weight:500;opacity:.85">(optional, for setup tips)</span></label>
+            <input id="sg-ph" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000" />
+          </div>
+          <button class="sg-btn" type="submit" id="sg-submit">Claim my free Pro year &rarr;</button>
+        </form>
+
+        <div class="sg-terms-chip">
+          <span aria-hidden="true">&#9432;</span>
+          <span>No subscription fee for 12 months, then $59/month unless you upgrade or cancel. Booking commission on Pro: 20% on a new client's first 4 sessions, 10% from the 5th.</span>
+        </div>
+        <p class="sg-fine">By claiming, you agree to receive emails about your invitation. Unsubscribe anytime. <a href="#" data-sg-privacy target="_blank" rel="noopener">Privacy</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="sg-dark">
+    <div class="sg-wrap">
+      <span class="sg-eyebrow">The real problem</span>
+      <h2 class="sg-display sg-rv">Clients know they need help.<br />They just can't find <span class="sg-or">you.</span></h2>
+      <p class="sg-lead sg-rv">The people you could help are searching right now. Here's what they run into first.</p>
+      <div class="sg-cards3">
+        <div class="sg-pcard sg-rv"><div class="sg-num">01</div><h3>Content noise</h3><p>Endless posts and reels, with no clear way to pick a real professional who fits.</p></div>
+        <div class="sg-pcard sg-rv"><div class="sg-num">02</div><h3>Generic AI answers</h3><p>Advice that sounds fine but isn't tailored, accountable or human.</p></div>
+        <div class="sg-pcard sg-rv"><div class="sg-num">03</div><h3>Algorithms</h3><p>Your reach depends on posting daily, not on how good you are with clients.</p></div>
+      </div>
+      <p class="sg-turn sg-rv">And on your side? About <span class="sg-or">six separate tools</span> for booking, payments and video. Stageo puts it on one stage.</p>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section>
+    <div class="sg-wrap">
+      <div class="sg-center">
+        <span class="sg-eyebrow">What's included in Pro</span>
+        <h2 class="sg-display sg-rv">Everything to get found, booked and paid.</h2>
+        <p class="sg-lead sg-rv">Free for your first year. Set up in about an hour.</p>
+      </div>
+      <div class="sg-feat-grid">
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Bookable profile</h3><p>Your own profile URL, structured for search, with verified reviews.</p></div>
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Smart booking</h3><p>Clients pick a time from your availability. No back-and-forth.</p></div>
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><h3>Built-in payments</h3><p>Taken at booking and held until the session happens. Fewer no-shows.</p></div>
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg></div><h3>Live session rooms</h3><p>Run sessions inside Stageo. No separate video subscription.</p></div>
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></div><h3>10 live offers + 10 courses</h3><p>Package your expertise as sessions and on-demand courses.</p></div>
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg></div><h3>Pro badge &amp; testimonials</h3><p>A Pro badge, managed testimonials and a boost in search.</p></div>
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3>Automatic reminders</h3><p>Clients get reminded before sessions, so you don't have to chase.</p></div>
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8z"/></svg></div><h3>Eligible for promotion</h3><p>Pro profiles can be featured in Stageo's own campaigns and area pages.</p></div>
+        <div class="sg-feat sg-rv"><div class="sg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div><h3>StageReady AI</h3><p>Scores your profile and offers, then hands you the fixes to make first.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="background:var(--cream2)">
+    <div class="sg-wrap">
+      <span class="sg-eyebrow">How it works</span>
+      <h2 class="sg-display sg-rv">Live in about an hour.</h2>
+      <p class="sg-lead sg-rv">Most professionals finish setup in a single sitting.</p>
+      <div class="sg-steps">
+        <div class="sg-step sg-rv"><span class="sg-mono">Step 1 · 2 min</span><h3>Accept the invite</h3><p>Claim your spot above, then create your Stageo account.</p></div>
+        <div class="sg-step sg-rv"><span class="sg-mono">Step 2 · ~25 min</span><h3>Build your profile</h3><p>Photo, bio and a short 30-second video intro.</p></div>
+        <div class="sg-step sg-rv"><span class="sg-mono">Step 3 · ~20 min</span><h3>Publish an offer</h3><p>A clear session or package, plus your availability.</p></div>
+        <div class="sg-step sg-rv"><span class="sg-mono">Step 4 · ~10 min</span><h3>Run StageReady AI</h3><p>Get your top three fixes before clients see you.</p></div>
+      </div>
+      <div style="margin-top:40px"><a class="sg-btn" href="#sg-claim" data-sg-scroll>Claim my free Pro year &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- WHAT'S THE CATCH -->
+  <section id="sg-catch">
+    <div class="sg-wrap">
+      <span class="sg-eyebrow">What's the catch?</span>
+      <h2 class="sg-display sg-rv">No small print. Here it is in full.</h2>
+      <p class="sg-lead sg-rv">Stageo is building demand across five areas of personal growth and needs proven professionals for that demand to land on. That's why Pro is free for your first year.</p>
+
+      <div class="sg-terms-grid">
+        <table class="sg-table sg-rv">
+          <thead><tr><th>Term</th><th>Pro invitation</th></tr></thead>
+          <tbody>
+            <tr><td>Months 1–12</td><td>$0 subscription (normally $708/year)</td></tr>
+            <tr><td>From month 13</td><td>$59/month, unless you upgrade or cancel first</td></tr>
+            <tr><td>Booking commission</td><td>20% on a new client's first 4 sessions, then 10% from the 5th session</td></tr>
+            <tr><td>Payment fees</td><td>Standard Stripe processing fees apply</td></tr>
+            <tr><td>Promotion</td><td>Eligible to be featured. Placement, frequency and bookings are not guaranteed</td></tr>
+            <tr><td>Want 0% commission?</td><td>Premium is $149/month with no booking commission. <a href="#" data-sg-premium data-sg-out style="color:var(--orange);font-weight:700">See Premium</a></td></tr>
+          </tbody>
+        </table>
+
+        <div class="sg-calc sg-rv">
+          <h3>Pro or Premium? Run your numbers.</h3>
+          <p class="sg-sub">Estimate what commission would cost you each month.</p>
+          <div class="sg-slider">
+            <div class="sg-slider-top"><span>Average session price</span><b id="sg-v-price">$120</b></div>
+            <input type="range" id="sg-price" min="20" max="500" step="10" value="120" aria-label="Average session price" />
+          </div>
+          <div class="sg-slider">
+            <div class="sg-slider-top"><span>Sessions booked through Stageo / month</span><b id="sg-v-sess">8</b></div>
+            <input type="range" id="sg-sess" min="1" max="80" step="1" value="8" aria-label="Sessions per month" />
+          </div>
+          <div class="sg-out">
+            <div><small>Pro, year 1<br />(commission only)</small><b id="sg-o-pro1">$96–$192</b></div>
+            <div><small>Premium<br />(flat, 0% commission)</small><b>$149</b></div>
+          </div>
+          <div class="sg-verdict" id="sg-verdict">Your free Pro year is the better deal right now.</div>
+          <p class="sg-note">Estimate only. The range is 10%–20% because 20% applies to a new client's first 4 sessions and 10% after. After year 1, Pro adds $59/month. Stripe fees apply on both plans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS: hidden until you add VERIFIED coach quotes. Then delete style="display:none". -->
+  <section style="display:none; background:var(--cream2)">
+    <div class="sg-wrap sg-center">
+      <span class="sg-eyebrow">From coaches on Stageo</span>
+      <h2 class="sg-display">Real professionals. Real clients.</h2>
+      <div class="sg-quotes" style="text-align:left">
+        <div class="sg-quote"><p>"VERIFIED QUOTE 1"</p><span>Name · Role · Country</span></div>
+        <div class="sg-quote"><p>"VERIFIED QUOTE 2"</p><span>Name · Role · Country</span></div>
+        <div class="sg-quote"><p>"VERIFIED QUOTE 3"</p><span>Name · Role · Country</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background:#fff">
+    <div class="sg-wrap">
+      <div class="sg-center">
+        <span class="sg-eyebrow">Questions</span>
+        <h2 class="sg-display sg-rv">Before you claim.</h2>
+      </div>
+      <div class="sg-faq">
+        <div class="sg-q"><button type="button">Is Pro really free for the first year?<span class="sg-plus">+</span></button><div class="sg-a"><p>Yes. There's no subscription fee for 12 months. Booking commission still applies on Pro (20% on a new client's first 4 sessions, 10% from the 5th), plus standard Stripe processing fees.</p></div></div>
+        <div class="sg-q"><button type="button">Why is Stageo giving it away?<span class="sg-plus">+</span></button><div class="sg-a"><p>Stageo is building client demand across Careers, Wellness, Wealth, Connection and Learning. That demand needs experienced professionals to land on, so the first year of Pro is on Stageo.</p></div></div>
+        <div class="sg-q"><button type="button">What happens after 12 months?<span class="sg-plus">+</span></button><div class="sg-a"><p>Pro continues at $59/month unless you upgrade to Premium or cancel before then.</p></div></div>
+        <div class="sg-q"><button type="button">How do I avoid booking commission?<span class="sg-plus">+</span></button><div class="sg-a"><p>Go Premium. It's $149/month with 0% booking commission, plus more capacity and inclusion in Stageo's ad rotation. Use the calculator above to see which plan suits your volume.</p></div></div>
+        <div class="sg-q"><button type="button">Am I guaranteed to be featured or get bookings?<span class="sg-plus">+</span></button><div class="sg-a"><p>No. Pro profiles are eligible for Stageo's promotion, but placement, frequency and bookings aren't guaranteed. Complete, well-reviewed profiles with clear offers give you the best chance.</p></div></div>
+        <div class="sg-q"><button type="button">Do I need tech skills?<span class="sg-plus">+</span></button><div class="sg-a"><p>No. Most professionals go from invite to a live profile in about an hour, and StageReady AI tells you what to improve.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="sg-final">
+    <div class="sg-wrap">
+      <h2 class="sg-display sg-rv">Be the human they find.</h2>
+      <p class="sg-lead sg-rv">Claim your free year of Stageo Pro while invitation places are open.</p>
+      <a class="sg-btn" href="#sg-claim" data-sg-scroll>Claim my free Pro year &rarr;</a>
+      <p class="sg-fine">$0 for 12 months, then $59/month unless you upgrade or cancel. Booking commission applies on Pro.</p>
+    </div>
+  </section>
+
+  <footer class="sg-footer">
+    <div class="sg-wrap">
+      <span>&copy; <span id="sg-yr"></span> Stageo</span>
+      <span><a href="#" data-sg-privacy target="_blank" rel="noopener">Privacy Policy</a><a href="#" data-sg-terms target="_blank" rel="noopener">Terms &amp; Conditions</a></span>
+    </div>
+  </footer>
+
+  <div class="sg-sticky" id="sg-sticky">
+    <small><b>Stageo Pro · $0 for 12 months</b>Then $59/mo unless you cancel</small>
+    <a class="sg-btn sg-btn-sm" href="#sg-claim" data-sg-scroll>Claim free year</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  /* ============================ CONFIG ============================ */
+  var CONFIG = {
+    // GHL Workflow > Trigger "Inbound Webhook" > copy the URL here.
+    WEBHOOK_URL: "",
+    // Full URL of the Page 2 (thank-you / bridge) step in this GHL funnel.
+    THANK_YOU_URL: "thank-you.html",
+    // Used for the "See Premium" link (Page 3 of this funnel, or the live Premium site).
+    PREMIUM_URL: "premium.html",
+    // Paste Stageo's real policy URLs. Links stay hidden while these are empty.
+    PRIVACY_URL: "",
+    TERMS_URL: "",
+    OFFER: "pro_invite",
+    TAG: "stageo-pro-lead"
+  };
+  /* =============================================================== */
+
+  var root = document.getElementById('sgp');
+  if (!root) return;
+  var $ = function (s, c) { return (c || root).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || root).querySelectorAll(s)); };
+
+  // ---------- Attribution: capture UTMs + fbclid (first + last touch) ----------
+  var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
+  var qs = new URLSearchParams(window.location.search);
+  var last = {}, first = null;
+  try { last = JSON.parse(localStorage.getItem('sg_last') || '{}'); first = JSON.parse(localStorage.getItem('sg_first') || 'null'); } catch (e) {}
+  var incoming = {};
+  KEYS.forEach(function (k) { if (qs.get(k)) incoming[k] = qs.get(k); });
+  if (Object.keys(incoming).length) {
+    last = incoming; last.landed_at = new Date().toISOString();
+    if (!first) first = last;
+    try { localStorage.setItem('sg_last', JSON.stringify(last)); localStorage.setItem('sg_first', JSON.stringify(first)); } catch (e) {}
+  }
+  function withAttr(url) {
+    if (!url || url === '#') return url;
+    try {
+      var u = new URL(url, window.location.href);
+      KEYS.forEach(function (k) { if (last[k] && !u.searchParams.get(k)) u.searchParams.set(k, last[k]); });
+      return u.toString();
+    } catch (e) { return url; }
+  }
+
+  // ---------- Links ----------
+  $$('[data-sg-privacy]').forEach(function (a) { if (CONFIG.PRIVACY_URL) a.href = CONFIG.PRIVACY_URL; else a.style.display = 'none'; });
+  $$('[data-sg-terms]').forEach(function (a) { if (CONFIG.TERMS_URL) a.href = CONFIG.TERMS_URL; else a.style.display = 'none'; });
+  $$('[data-sg-premium]').forEach(function (a) { a.href = withAttr(CONFIG.PREMIUM_URL); a.target = '_blank'; a.rel = 'noopener'; });
+  $('#sg-yr').textContent = new Date().getFullYear();
+
+  // Smooth scroll to form + focus first field
+  $$('[data-sg-scroll]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var t = $('#sg-claim');
+      var y = t.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      setTimeout(function () { $('#sg-fn').focus({ preventScroll: true }); }, 650);
+    });
+  });
+
+  // ---------- Pixel helper ----------
+  function track(ev, data, id) {
+    try { if (window.fbq) window.fbq('track', ev, data || {}, id ? { eventID: id } : undefined); } catch (e) {}
+  }
+
+  // ---------- FAQ ----------
+  $$('.sg-q').forEach(function (q) {
+    var btn = $('button', q), a = $('.sg-a', q);
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', function () {
+      var open = q.classList.toggle('sg-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      a.style.maxHeight = open ? a.scrollHeight + 'px' : '0px';
+    });
+  });
+
+  // ---------- Calculator ----------
+  var price = $('#sg-price'), sess = $('#sg-sess');
+  var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  function calc() {
+    var rev = (+price.value) * (+sess.value);
+    var lo = rev * 0.10, hi = rev * 0.20;
+    $('#sg-v-price').textContent = money(+price.value);
+    $('#sg-v-sess').textContent = sess.value;
+    $('#sg-o-pro1').textContent = money(lo) + '–' + money(hi);
+    var v = $('#sg-verdict');
+    if (hi <= 149) v.textContent = 'At this volume, your free Pro year is the better deal.';
+    else if (lo >= 149) v.innerHTML = 'At this volume, Premium likely saves you money. <a href="' + withAttr(CONFIG.PREMIUM_URL) + '" target="_blank" rel="noopener">See Premium &rarr;</a>';
+    else v.textContent = 'It’s close. It depends how many of your bookings come from new clients. Start free and upgrade when commission passes $149.';
+  }
+  price.addEventListener('input', calc); sess.addEventListener('input', calc); calc();
+
+  // ---------- Reveal on scroll + ViewContent when terms are seen ----------
+  var vcSent = false;
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('sg-in');
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.12 });
+    $$('.sg-rv').forEach(function (el) { io.observe(el); });
+
+    var vc = new IntersectionObserver(function (ents) {
+      if (ents[0].isIntersecting && !vcSent) { vcSent = true; track('ViewContent', { content_name: 'Pro Invitation terms' }); vc.disconnect(); }
+    }, { threshold: 0.3 });
+    vc.observe($('#sg-catch'));
+
+    // Sticky CTA: show once the form scrolls away, hide while the form is visible
+    var sticky = $('#sg-sticky');
+    var so = new IntersectionObserver(function (ents) {
+      var past = !ents[0].isIntersecting && ents[0].boundingClientRect.top < 0;
+      sticky.classList.toggle('sg-show', past);
+    });
+    so.observe($('#sg-claim'));
+  } else {
+    $$('.sg-rv').forEach(function (el) { el.classList.add('sg-in'); });
+  }
+
+  // ---------- Form ----------
+  var form = $('#sg-form'), btn = $('#sg-submit');
+  var reEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function setBad(input, bad) { input.closest('.sg-field').classList.toggle('sg-bad', bad); }
+  $$('input, select', form).forEach(function (el) {
+    el.addEventListener('input', function () { setBad(el, false); });
+    el.addEventListener('change', function () { setBad(el, false); });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fn = $('#sg-fn'), em = $('#sg-em'), ar = $('#sg-area'), ph = $('#sg-ph');
+    var ok = true;
+    if (!fn.value.trim()) { setBad(fn, true); ok = false; }
+    if (!ar.value) { setBad(ar, true); ok = false; }
+    if (!reEmail.test(em.value.trim())) { setBad(em, true); ok = false; }
+    if (!ok) { var f = $('.sg-bad input, .sg-bad select', form); if (f) f.focus(); return; }
+
+    btn.disabled = true; btn.textContent = 'Reserving your place…';
+    var eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+
+    var payload = {
+      first_name: fn.value.trim(),
+      email: em.value.trim().toLowerCase(),
+      phone: ph.value.trim(),
+      growth_area: ar.value,
+      offer: CONFIG.OFFER,
+      tag: CONFIG.TAG,
+      event_id: eventId,
+      page_url: window.location.href.split('?')[0],
+      first_utm_source: first ? first.utm_source || '' : '',
+      first_utm_campaign: first ? first.utm_campaign || '' : ''
+    };
+    KEYS.forEach(function (k) { payload[k] = last[k] || ''; });
+
+    track('Lead', { content_name: 'Pro Invitation', content_category: ar.value }, eventId);
+    try { sessionStorage.setItem('sg_lead', JSON.stringify({ first_name: payload.first_name, growth_area: payload.growth_area, email: payload.email })); } catch (err) {}
+
+    function go() {
+      var next = new URL(CONFIG.THANK_YOU_URL, window.location.href);
+      next.searchParams.set('fn', payload.first_name);
+      next.searchParams.set('ga', payload.growth_area);
+      KEYS.forEach(function (k) { if (last[k]) next.searchParams.set(k, last[k]); });
+      window.location.href = next.toString();
+    }
+
+    if (!CONFIG.WEBHOOK_URL) { console.warn('[Stageo funnel] WEBHOOK_URL is empty: lead NOT sent to GHL.'); go(); return; }
+
+    var body = new URLSearchParams(payload).toString();
+    var done = false, finish = function () { if (!done) { done = true; go(); } };
+    setTimeout(finish, 4000); // never trap the visitor if the network is slow
+    fetch(CONFIG.WEBHOOK_URL, {
+      method: 'POST', mode: 'no-cors', keepalive: true,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body
+    }).then(finish, finish);
+  });
+})();
+</script>
+</body></html>

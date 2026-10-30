@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>You're in (preview)</title></head><body style="margin:0">
+<!-- =====================================================================
+  STAGEO · PAGE 2 · THANK-YOU / BRIDGE  (after Pro opt-in)
+  Job of this page: get the lead to finish registration on stageo.co.
+  Paste into ONE GHL "Custom JS/HTML" element. Edit CONFIG at the bottom.
+====================================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet" />
+
+<style>
+  #sgt, #sgt * { box-sizing: border-box; margin: 0; padding: 0; }
+  #sgt {
+    --cream: #FFF5E9; --cream2: #FFEBD4; --ink: #121212; --ink2: #3d3a36; --ink3: #6f6a63;
+    --orange: #F04E23; --orange2: #F7861F; --line: rgba(18,18,18,.12); --green: #22A06B;
+    font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 17px; line-height: 1.6; color: var(--ink); background: var(--cream);
+    -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%;
+  }
+  #sgt a { color: inherit; }
+  #sgt .sg-wrap { width: 100%; max-width: 980px; margin: 0 auto; padding: 0 22px; }
+  #sgt .sg-display { font-family: 'Unbounded', 'Arial Black', sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1.06; }
+  #sgt .sg-mono { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+  #sgt .sg-or { color: var(--orange); }
+
+  #sgt .sg-header { border-bottom: 1px solid var(--line); }
+  #sgt .sg-header .sg-wrap { display: flex; align-items: center; height: 68px; }
+  #sgt .sg-logo { display: flex; align-items: center; gap: 10px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 22px; color: var(--orange); }
+  #sgt .sg-logo-mark { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--orange2), var(--orange)); display: grid; place-items: center; color: #fff; font-size: 16px; }
+
+  /* Progress */
+  #sgt .sg-progress { padding: 34px 0 0; }
+  #sgt .sg-bar { height: 10px; border-radius: 99px; background: rgba(18,18,18,.08); overflow: hidden; }
+  #sgt .sg-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--orange2), var(--orange)); border-radius: 99px; transition: width 1.2s cubic-bezier(.2,.8,.2,1); }
+  #sgt .sg-bar-labels { display: flex; justify-content: space-between; margin-top: 10px; font-size: 14px; color: var(--ink3); }
+  #sgt .sg-bar-labels b { color: var(--ink); }
+
+  /* Hero */
+  #sgt .sg-hero { padding: 44px 0 60px; text-align: center; }
+  #sgt .sg-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 7px 16px; font-size: 14px; font-weight: 700; margin-bottom: 22px; }
+  #sgt .sg-badge i { width: 20px; height: 20px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-style: normal; font-size: 12px; }
+  #sgt .sg-hero h1 { font-size: clamp(32px, 5vw, 58px); margin-bottom: 18px; }
+  #sgt .sg-hero p.sg-lead { font-size: 19px; color: var(--ink2); max-width: 640px; margin: 0 auto 30px; }
+  #sgt .sg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 19px; text-decoration: none; border: 0; cursor: pointer; border-radius: 999px; padding: 20px 36px; background: var(--orange); color: #fff; box-shadow: 0 14px 30px -12px rgba(240,78,35,.75); transition: transform .15s, box-shadow .15s, background .15s; animation: sgNudge 3.2s ease-in-out 2s infinite; }
+  #sgt .sg-btn:hover { transform: translateY(-2px); background: #e0431a; }
+  @keyframes sgNudge { 0%, 90%, 100% { transform: none; } 93% { transform: translateY(-4px); } 96% { transform: translateY(0); } }
+  #sgt .sg-btn-dark { background: var(--ink); box-shadow: none; animation: none; font-size: 16px; padding: 15px 26px; }
+  #sgt .sg-btn-dark:hover { background: #000; }
+  #sgt .sg-micro { font-size: 14px; color: var(--ink3); margin-top: 14px; }
+
+  /* Video (optional) */
+  #sgt .sg-video { position: relative; max-width: 760px; margin: 0 auto 50px; border-radius: 20px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; box-shadow: 0 30px 60px -30px rgba(0,0,0,.5); }
+  #sgt .sg-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* Checklist */
+  #sgt .sg-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; padding-bottom: 70px; }
+  #sgt .sg-card { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 28px; }
+  #sgt .sg-card h2 { font-family: 'Unbounded', sans-serif; font-size: 21px; line-height: 1.2; margin-bottom: 6px; }
+  #sgt .sg-card .sg-sub { color: var(--ink3); font-size: 15px; margin-bottom: 18px; }
+  #sgt .sg-check { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-top: 1px solid var(--line); cursor: pointer; user-select: none; }
+  #sgt .sg-check input { position: absolute; opacity: 0; pointer-events: none; }
+  #sgt .sg-box { flex: 0 0 26px; height: 26px; border-radius: 8px; border: 2px solid var(--ink); display: grid; place-items: center; transition: background .15s, border-color .15s; margin-top: 1px; }
+  #sgt .sg-box svg { width: 15px; height: 15px; stroke: #fff; opacity: 0; transition: opacity .15s; }
+  #sgt .sg-check input:checked + .sg-box { background: var(--green); border-color: var(--green); }
+  #sgt .sg-check input:checked + .sg-box svg { opacity: 1; }
+  #sgt .sg-check input:focus-visible + .sg-box { outline: 3px solid var(--orange2); outline-offset: 2px; }
+  #sgt .sg-check b { display: block; font-size: 16px; }
+  #sgt .sg-check span.sg-d { font-size: 14px; color: var(--ink3); line-height: 1.45; display: block; }
+  #sgt .sg-check input:checked ~ .sg-txt b { text-decoration: line-through; color: var(--ink3); }
+  #sgt .sg-ready { margin-top: 14px; font-size: 14px; font-weight: 700; color: var(--green); min-height: 22px; }
+
+  #sgt .sg-steps li { list-style: none; position: relative; padding: 0 0 18px 34px; }
+  #sgt .sg-steps li::before { content: attr(data-n); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--cream2); color: var(--orange); font: 800 12px 'Unbounded', sans-serif; display: grid; place-items: center; }
+  #sgt .sg-steps li.sg-done::before { content: "\2713"; background: var(--green); color: #fff; font-family: 'DM Sans', sans-serif; }
+  #sgt .sg-steps li:not(:last-child)::after { content: ""; position: absolute; left: 11px; top: 28px; bottom: 4px; width: 2px; background: var(--line); }
+  #sgt .sg-steps b { display: block; font-size: 16px; }
+  #sgt .sg-steps span { font-size: 14px; color: var(--ink3); }
+
+  /* Premium upsell */
+  #sgt .sg-up { background: #0B0B0B; color: #fff; border-radius: 24px; padding: 40px; display: grid; grid-template-columns: 1.3fr .7fr; gap: 30px; align-items: center; margin-bottom: 70px; position: relative; overflow: hidden; }
+  #sgt .sg-up::before { content: ""; position: absolute; right: -80px; top: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(247,134,31,.35), transparent 70%); }
+  #sgt .sg-up .sg-mono { color: var(--orange2); }
+  #sgt .sg-up h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(22px, 3vw, 30px); line-height: 1.15; margin: 10px 0 12px; }
+  #sgt .sg-up p { color: rgba(255,255,255,.72); font-size: 16px; }
+  #sgt .sg-up-price { text-align: center; position: relative; }
+  #sgt .sg-up-price b { font-family: 'Unbounded', sans-serif; font-size: 44px; color: var(--orange2); display: block; line-height: 1; }
+  #sgt .sg-up-price small { display: block; color: rgba(255,255,255,.6); margin: 6px 0 16px; font-size: 14px; }
+  #sgt .sg-up .sg-btn-ghost { display: inline-block; border: 2px solid var(--orange2); color: var(--orange2); border-radius: 99px; padding: 12px 22px; font-weight: 700; text-decoration: none; transition: background .15s, color .15s; }
+  #sgt .sg-up .sg-btn-ghost:hover { background: var(--orange2); color: #0B0B0B; }
+
+  #sgt .sg-foot { text-align: center; font-size: 13px; color: var(--ink3); padding: 0 0 40px; }
+
+  @media (max-width: 820px) {
+    #sgt .sg-grid, #sgt .sg-up { grid-template-columns: 1fr; }
+    #sgt .sg-up { padding: 30px 24px; }
+  }
+  @media (max-width: 520px) {
+    #sgt .sg-btn { width: 100%; font-size: 17px; padding: 18px 20px; }
+    #sgt .sg-card { padding: 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) { #sgt * { animation: none !important; transition: none !important; } }
+</style>
+
+<div id="sgt">
+  <header class="sg-header"><div class="sg-wrap"><span class="sg-logo"><span class="sg-logo-mark">S</span>Stageo</span></div></header>
+
+  <div class="sg-wrap sg-progress">
+    <div class="sg-bar" aria-hidden="true"><i id="sg-bar"></i></div>
+    <div class="sg-bar-labels"><span><b>Step 1:</b> Place reserved &#10003;</span><span><b>Step 2:</b> Create your account</span></div>
+  </div>
+
+  <section class="sg-hero">
+    <div class="sg-wrap">
+      <span class="sg-badge"><i>&#10003;</i>Your Founding Pro place is reserved</span>
+      <h1 class="sg-display">You're in<span id="sg-name"></span>.<br /><span class="sg-or">One step left.</span></h1>
+      <p class="sg-lead">Create your Stageo account now to activate 12 months of Pro at $0. It takes about two minutes, and you can build your profile straight after.</p>
+      <a class="sg-btn" id="sg-signup" href="#" target="_blank" rel="noopener">Create my Stageo account &rarr;</a>
+      <p class="sg-micro">Opens stageo.co in a new tab. Keep this page open for your setup checklist.</p>
+    </div>
+  </section>
+
+  <div class="sg-wrap">
+    <!-- Optional welcome video: set VIDEO_EMBED_URL in CONFIG. Hidden while empty. -->
+    <div class="sg-video" id="sg-video" style="display:none"></div>
+
+    <div class="sg-grid">
+      <div class="sg-card">
+        <h2>Have these ready for setup</h2>
+        <p class="sg-sub">Profiles with all five go live faster and are the ones Stageo's promotion favours.</p>
+        <label class="sg-check"><input type="checkbox" data-k="photo" /><span class="sg-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="sg-txt"><b>A clear, professional photo</b><span class="sg-d">Face visible, good light, plain background.</span></span></label>
+        <label class="sg-check"><input type="checkbox" data-k="video" /><span class="sg-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="sg-txt"><b>A 30-second video intro</b><span class="sg-d">Who you help, the result you help them reach, and how to book. Your phone is fine.</span></span></label>
+        <label class="sg-check"><input type="checkbox" data-k="offer" /><span class="sg-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="sg-txt"><b>One clear offer</b><span class="sg-d">Name, session length, price and who it's for.</span></span></label>
+        <label class="sg-check"><input type="checkbox" data-k="avail" /><span class="sg-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="sg-txt"><b>Your weekly availability</b><span class="sg-d">The days and times clients can book you.</span></span></label>
+        <label class="sg-check"><input type="checkbox" data-k="reviews" /><span class="sg-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="sg-txt"><b>2–3 past clients for reviews</b><span class="sg-d">People happy to leave a short testimonial once you're live.</span></span></label>
+        <div class="sg-ready" id="sg-ready" aria-live="polite"></div>
+      </div>
+
+      <div class="sg-card">
+        <h2>Your first hour</h2>
+        <p class="sg-sub">From invite to a live, bookable profile.</p>
+        <ol class="sg-steps">
+          <li data-n="1" class="sg-done"><b>Reserve your place</b><span>Done</span></li>
+          <li data-n="2"><b>Create your account</b><span>~2 minutes</span></li>
+          <li data-n="3"><b>Build your profile</b><span>~25 minutes</span></li>
+          <li data-n="4"><b>Publish an offer</b><span>~20 minutes</span></li>
+          <li data-n="5"><b>Run StageReady AI</b><span>~10 minutes, get your top 3 fixes</span></li>
+        </ol>
+        <a class="sg-btn sg-btn-dark" id="sg-signup2" href="#" target="_blank" rel="noopener" style="margin-top:8px">Start step 2 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="sg-up">
+      <div style="position:relative">
+        <span class="sg-mono">Already booking regularly?</span>
+        <h2>Skip the commission with Premium.</h2>
+        <p>Pro charges 20% on a new client's first 4 sessions and 10% after. Premium is a flat $149/month with 0% booking commission, plus Stageo's ad rotation, workshops and hands-on support. Most professionals start on the free Pro year and upgrade once commission would pass $149 a month.</p>
+      </div>
+      <div class="sg-up-price">
+        <b>$149</b>
+        <small>per month · 0% commission · cancel anytime</small>
+        <a class="sg-btn-ghost" id="sg-premium" href="#" target="_blank" rel="noopener">Compare Premium</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="sg-foot">Didn't mean to sign up? Just ignore our emails, or unsubscribe from any of them.</p>
+</div>
+
+<script>
+(function () {
+  /* ============================ CONFIG ============================ */
+  var CONFIG = {
+    SIGNUP_URL: "https://www.stageo.co/auth/guide/signup?ref=founding-pro",
+    PREMIUM_URL: "premium.html",   // or Page 3 of this funnel
+    // Optional welcome video embed URL, e.g. "https://www.youtube.com/embed/VIDEO_ID" or a Vimeo/Loom embed URL.
+    VIDEO_EMBED_URL: ""
+  };
+  /* =============================================================== */
+
+  var root = document.getElementById('sgt');
+  if (!root) return;
+  var $ = function (s) { return root.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
+
+  var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
+  var qs = new URLSearchParams(window.location.search);
+  var last = {};
+  try { last = JSON.parse(localStorage.getItem('sg_last') || '{}'); } catch (e) {}
+  KEYS.forEach(function (k) { if (qs.get(k)) last[k] = qs.get(k); });
+
+  function withAttr(url) {
+    try {
+      var u = new URL(url, window.location.href);
+      KEYS.forEach(function (k) { if (last[k] && !u.searchParams.get(k)) u.searchParams.set(k, last[k]); });
+      return u.toString();
+    } catch (e) { return url; }
+  }
+  function track(ev, data, custom) {
+    try { if (window.fbq) window.fbq(custom ? 'trackCustom' : 'track', ev, data || {}); } catch (e) {}
+  }
+
+  // Personalise
+  var lead = {};
+  try { lead = JSON.parse(sessionStorage.getItem('sg_lead') || '{}'); } catch (e) {}
+  var fn = (qs.get('fn') || lead.first_name || '').trim().slice(0, 40);
+  if (fn) $('#sg-name').textContent = ', ' + fn;
+
+  // Links + click tracking
+  var signup = withAttr(CONFIG.SIGNUP_URL);
+  ['#sg-signup', '#sg-signup2'].forEach(function (id) {
+    var a = $(id); a.href = signup;
+    a.addEventListener('click', function () {
+      track('StartRegistration', { content_name: 'Pro Invitation' }, true);
+      var s2 = root.querySelector('.sg-steps li[data-n="2"]'); if (s2) s2.classList.add('sg-done');
+    });
+  });
+  var prem = $('#sg-premium'); prem.href = withAttr(CONFIG.PREMIUM_URL);
+  prem.addEventListener('click', function () { track('ViewPremium', { from: 'bridge' }, true); });
+
+  // Video
+  if (CONFIG.VIDEO_EMBED_URL) {
+    var v = $('#sg-video');
+    v.innerHTML = '<iframe src="' + CONFIG.VIDEO_EMBED_URL + '" title="Welcome to Stageo" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    v.style.display = 'block';
+  }
+
+  // Progress bar animation
+  setTimeout(function () { $('#sg-bar').style.width = '50%'; }, 250);
+
+  // Checklist (remembered on this device)
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem('sg_ready') || '{}'); } catch (e) {}
+  var boxes = $$('.sg-check input');
+  function update() {
+    var n = boxes.filter(function (b) { return b.checked; }).length;
+    $('#sg-ready').textContent = n === boxes.length ? 'You’re ready. Setup should take under an hour.' : (n ? n + ' of ' + boxes.length + ' ready' : '');
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!saved[b.getAttribute('data-k')];
+    b.addEventListener('change', function () {
+      saved[b.getAttribute('data-k')] = b.checked;
+      try { localStorage.setItem('sg_ready', JSON.stringify(saved)); } catch (e) {}
+      update();
+    });
+  });
+  update();
+})();
+</script>
+</body></html>

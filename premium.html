@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Stageo Premium (preview)</title></head><body style="margin:0">
+<!-- =====================================================================
+  STAGEO · PAGE 3 · PREMIUM  (Campaign B, warm traffic + upgrade path)
+  Paste into ONE GHL "Custom JS/HTML" element. Edit CONFIG at the bottom.
+====================================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet" />
+
+<style>
+  #sgm, #sgm * { box-sizing: border-box; margin: 0; padding: 0; }
+  #sgm {
+    --bg: #0A0A0A; --bg2: #121212; --card: #161616; --ink: #F5F2EE; --ink2: rgba(245,242,238,.74); --ink3: rgba(245,242,238,.52);
+    --or: #F7861F; --or2: #F04E23; --line: rgba(255,255,255,.1);
+    font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 17px; line-height: 1.6; color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%;
+  }
+  #sgm a { color: inherit; }
+  #sgm .sg-wrap { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 22px; }
+  #sgm .sg-display { font-family: 'Unbounded', 'Arial Black', sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1.04; }
+  #sgm .sg-or { color: var(--or); }
+  #sgm section { padding: 90px 0; }
+  #sgm .sg-eyebrow { display: inline-block; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--or); margin-bottom: 14px; }
+  #sgm h2.sg-display { font-size: clamp(28px, 4vw, 48px); margin-bottom: 16px; }
+  #sgm .sg-lead { font-size: 19px; color: var(--ink2); max-width: 680px; }
+  #sgm .sg-center { text-align: center; }
+  #sgm .sg-center .sg-lead { margin: 0 auto; }
+
+  #sgm .sg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 17px; text-decoration: none; border: 0; cursor: pointer; border-radius: 10px; padding: 18px 34px; background: var(--or); color: #111; transition: transform .15s, box-shadow .15s, filter .15s; box-shadow: 0 12px 30px -12px rgba(247,134,31,.65); }
+  #sgm .sg-btn:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 18px 34px -12px rgba(247,134,31,.8); }
+  #sgm .sg-btn-sm { padding: 11px 18px; font-size: 15px; }
+  #sgm .sg-micro { font-size: 15px; color: var(--ink3); margin-top: 16px; }
+
+  #sgm .sg-header { position: sticky; top: 0; z-index: 50; background: rgba(10,10,10,.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  #sgm .sg-header .sg-wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  #sgm .sg-logo { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 22px; color: var(--or); text-decoration: none; }
+
+  /* Hero */
+  #sgm .sg-hero { text-align: center; padding: 90px 0 70px; position: relative; }
+  #sgm .sg-hero::before { content: ""; position: absolute; left: 50%; top: -120px; width: 900px; height: 520px; transform: translateX(-50%); background: radial-gradient(ellipse at center, rgba(247,134,31,.22), transparent 65%); pointer-events: none; }
+  #sgm .sg-pill { position: relative; display: inline-block; border: 1px solid rgba(247,134,31,.55); color: var(--or); border-radius: 99px; padding: 8px 18px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 30px; }
+  #sgm .sg-hero h1 { position: relative; font-size: clamp(40px, 7vw, 86px); margin-bottom: 26px; }
+  #sgm .sg-hero .sg-lead { position: relative; margin: 0 auto 34px; max-width: 720px; }
+  #sgm .sg-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); margin-top: 70px; padding-top: 34px; }
+  #sgm .sg-stat + .sg-stat { border-left: 1px solid var(--line); }
+  #sgm .sg-stat b { display: block; font-family: 'Unbounded', sans-serif; font-size: clamp(26px, 3.4vw, 40px); color: var(--or); line-height: 1.1; }
+  #sgm .sg-stat span { color: var(--ink3); font-size: 15px; }
+
+  /* Stack replacement */
+  #sgm .sg-stack { display: grid; grid-template-columns: 1.2fr .8fr; gap: 26px; margin-top: 44px; align-items: stretch; }
+  #sgm .sg-rows { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+  #sgm .sg-r { display: grid; grid-template-columns: 1fr 1fr 30px; gap: 12px; align-items: center; padding: 15px 22px; border-bottom: 1px solid var(--line); font-size: 15px; }
+  #sgm .sg-r:last-child { border-bottom: 0; }
+  #sgm .sg-r.sg-h { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink3); background: rgba(255,255,255,.03); }
+  #sgm .sg-r s { color: var(--ink3); }
+  #sgm .sg-r .sg-tick { color: var(--or); font-weight: 800; text-align: right; }
+  #sgm .sg-save { background: linear-gradient(160deg, #1d1309, #121212 60%); border: 1px solid rgba(247,134,31,.35); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+  #sgm .sg-save small { color: var(--ink3); font-size: 14px; display: block; }
+  #sgm .sg-save .sg-big { font-family: 'Unbounded', sans-serif; font-size: 34px; line-height: 1.1; margin: 4px 0 18px; }
+  #sgm .sg-save .sg-big s { color: var(--ink3); font-size: 26px; }
+  #sgm .sg-save .sg-keep { font-family: 'Unbounded', sans-serif; color: var(--or); font-size: 42px; line-height: 1; }
+  #sgm .sg-save p { color: var(--ink3); font-size: 13px; margin-top: 16px; }
+
+  /* Features */
+  #sgm .sg-feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; }
+  #sgm .sg-f { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; transition: border-color .2s, transform .2s; }
+  #sgm .sg-f:hover { border-color: rgba(247,134,31,.5); transform: translateY(-3px); }
+  #sgm .sg-f .sg-n { font-family: 'DM Mono', monospace; color: var(--or); font-size: 12px; }
+  #sgm .sg-f h3 { font-size: 17px; margin: 10px 0 6px; }
+  #sgm .sg-f p { color: var(--ink3); font-size: 14.5px; }
+
+  /* Calculator */
+  #sgm .sg-calc-wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: center; }
+  #sgm .sg-calc { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  #sgm .sg-sl { margin-bottom: 20px; }
+  #sgm .sg-sl-top { display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 8px; color: var(--ink2); }
+  #sgm .sg-sl-top b { color: var(--or); font-size: 17px; }
+  #sgm input[type=range] { width: 100%; accent-color: var(--or); cursor: pointer; }
+  #sgm .sg-bars { display: grid; gap: 12px; margin-top: 8px; }
+  #sgm .sg-barrow small { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink3); margin-bottom: 5px; }
+  #sgm .sg-barrow small b { color: var(--ink); font-size: 14px; }
+  #sgm .sg-track { height: 12px; border-radius: 99px; background: rgba(255,255,255,.07); overflow: hidden; }
+  #sgm .sg-track i { display: block; height: 100%; border-radius: 99px; transition: width .35s ease; }
+  #sgm .sg-result { margin-top: 18px; padding: 16px; border-radius: 14px; background: rgba(247,134,31,.12); border: 1px solid rgba(247,134,31,.4); font-weight: 700; }
+  #sgm .sg-note { font-size: 12px; color: var(--ink3); margin-top: 12px; line-height: 1.5; }
+
+  /* Payments flow */
+  #sgm .sg-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 44px; position: relative; }
+  #sgm .sg-flow > div { padding: 26px; border: 1px solid var(--line); background: var(--card); }
+  #sgm .sg-flow > div:first-child { border-radius: 18px 0 0 18px; }
+  #sgm .sg-flow > div:last-child { border-radius: 0 18px 18px 0; }
+  #sgm .sg-flow > div + div { border-left: 0; }
+  #sgm .sg-flow .sg-n { font-family: 'Unbounded', sans-serif; color: var(--or); font-size: 30px; }
+  #sgm .sg-flow h3 { font-size: 18px; margin: 6px 0; }
+  #sgm .sg-flow p { color: var(--ink3); font-size: 15px; }
+
+  /* Premium-only */
+  #sgm .sg-only { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+  #sgm .sg-only > div { border-top: 2px solid var(--or); padding-top: 18px; }
+  #sgm .sg-only h3 { font-size: 19px; margin-bottom: 6px; }
+  #sgm .sg-only p { color: var(--ink3); font-size: 15px; }
+
+  /* Pricing */
+  #sgm .sg-price-card { max-width: 560px; margin: 44px auto 0; background: var(--card); border: 1px solid rgba(247,134,31,.45); border-radius: 26px; padding: 40px 36px; text-align: center; box-shadow: 0 40px 80px -40px rgba(247,134,31,.45); }
+  #sgm .sg-price-card .sg-amt { font-family: 'Unbounded', sans-serif; font-size: 64px; line-height: 1; }
+  #sgm .sg-price-card .sg-amt span { font-size: 20px; color: var(--ink3); }
+  #sgm .sg-price-card .sg-per { color: var(--ink3); margin: 8px 0 26px; }
+  #sgm .sg-list { text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-bottom: 30px; font-size: 15px; }
+  #sgm .sg-list li { list-style: none; position: relative; padding-left: 24px; }
+  #sgm .sg-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--or); font-weight: 800; }
+  #sgm .sg-price-card .sg-btn { width: 100%; }
+  #sgm .sg-alt { margin-top: 18px; font-size: 14px; color: var(--ink3); }
+  #sgm .sg-alt a { color: var(--or); }
+
+  /* FAQ */
+  #sgm .sg-faq { max-width: 820px; margin: 40px auto 0; }
+  #sgm .sg-q { border-bottom: 1px solid var(--line); }
+  #sgm .sg-q button { width: 100%; background: none; border: 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 22px 0; font: 700 18px 'DM Sans', sans-serif; color: var(--ink); }
+  #sgm .sg-plus { flex: 0 0 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--line); display: grid; place-items: center; transition: transform .2s, background .2s; }
+  #sgm .sg-q.sg-open .sg-plus { transform: rotate(45deg); background: var(--or); color: #111; border-color: var(--or); }
+  #sgm .sg-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  #sgm .sg-a p { padding: 0 46px 22px 0; color: var(--ink2); font-size: 16px; }
+
+  #sgm .sg-final { text-align: center; position: relative; overflow: hidden; }
+  #sgm .sg-final::before { content: ""; position: absolute; left: 50%; bottom: -260px; width: 900px; height: 520px; transform: translateX(-50%); background: radial-gradient(ellipse at center, rgba(247,134,31,.22), transparent 65%); pointer-events: none; }
+  #sgm .sg-final > * { position: relative; }
+  #sgm .sg-footer { border-top: 1px solid var(--line); color: var(--ink3); font-size: 14px; padding: 26px 0 100px; }
+  #sgm .sg-footer .sg-wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  #sgm .sg-footer a { margin-left: 18px; text-decoration: none; }
+
+  #sgm .sg-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: rgba(18,18,18,.97); border-top: 1px solid var(--line); padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); display: none; align-items: center; justify-content: space-between; gap: 12px; transform: translateY(110%); transition: transform .3s; }
+  #sgm .sg-sticky.sg-show { transform: none; }
+  #sgm .sg-sticky small { font-size: 12px; color: var(--ink3); line-height: 1.3; }
+  #sgm .sg-sticky small b { display: block; color: var(--ink); font-size: 14px; }
+
+  #sgm .sg-rv { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  #sgm .sg-rv.sg-in { opacity: 1; transform: none; }
+
+  @media (max-width: 960px) {
+    #sgm .sg-stack, #sgm .sg-calc-wrap { grid-template-columns: 1fr; }
+    #sgm .sg-feats { grid-template-columns: 1fr 1fr; }
+    #sgm .sg-only { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    #sgm { font-size: 16px; }
+    #sgm section { padding: 64px 0; }
+    #sgm .sg-hero { padding: 56px 0 50px; }
+    #sgm .sg-header .sg-btn { display: none; }
+    #sgm .sg-stats { grid-template-columns: 1fr 1fr; gap: 22px 0; }
+    #sgm .sg-stat:nth-child(3) { border-left: 0; }
+    #sgm .sg-feats, #sgm .sg-list { grid-template-columns: 1fr; }
+    #sgm .sg-flow { grid-template-columns: 1fr; }
+    #sgm .sg-flow > div, #sgm .sg-flow > div:first-child, #sgm .sg-flow > div:last-child { border-radius: 0; border-left: 1px solid var(--line); }
+    #sgm .sg-flow > div:first-child { border-radius: 18px 18px 0 0; }
+    #sgm .sg-flow > div:last-child { border-radius: 0 0 18px 18px; }
+    #sgm .sg-flow > div + div { border-top: 0; }
+    #sgm .sg-r { grid-template-columns: 1fr 1fr 22px; padding: 13px 16px; font-size: 14px; }
+    #sgm .sg-price-card { padding: 30px 22px; }
+    #sgm .sg-sticky { display: flex; }
+    #sgm .sg-footer a { margin: 0 14px 0 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { #sgm *, #sgm .sg-rv { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; } }
+</style>
+
+<div id="sgm">
+  <header class="sg-header">
+    <div class="sg-wrap">
+      <a class="sg-logo" href="#sg-top">stageo.</a>
+      <a class="sg-btn sg-btn-sm" href="#" data-sg-start>Get Stageo Premium</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="sg-hero" id="sg-top">
+    <div class="sg-wrap">
+      <span class="sg-pill">For coaches, consultants &amp; experts</span>
+      <h1 class="sg-display">Your whole coaching business.<br /><span class="sg-or">On one stage.</span></h1>
+      <p class="sg-lead">Bookings, protected payments, live video, courses, AI session notes, reminders and your own bookable profile. Everything to run and grow a coaching practice, in one place instead of ten, with 0% booking commission.</p>
+      <a class="sg-btn" href="#" data-sg-start id="sg-hero-cta">Get Stageo Premium &rarr;</a>
+      <p class="sg-micro">$149/month · Set up in about an hour · Cancel anytime</p>
+      <div class="sg-stats">
+        <div class="sg-stat"><b>500+</b><span>coaches</span></div>
+        <div class="sg-stat"><b>0%</b><span>booking commission</span></div>
+        <div class="sg-stat"><b>1</b><span>login</span></div>
+        <div class="sg-stat"><b>~60 min</b><span>to go live</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONE PLATFORM, ONE BILL -->
+  <section style="background:var(--bg2)">
+    <div class="sg-wrap">
+      <span class="sg-eyebrow">One platform. One bill.</span>
+      <h2 class="sg-display sg-rv">Cancel the tool pile.</h2>
+      <p class="sg-lead sg-rv">Every job your current tools do, handled inside Stageo.</p>
+      <div class="sg-stack">
+        <div class="sg-rows sg-rv">
+          <div class="sg-r sg-h"><span>The job</span><span>What you pay for now</span><span></span></div>
+          <div class="sg-r"><span>Bookings &amp; calendar</span><s>Calendly</s><span class="sg-tick">&#10003;</span></div>
+          <div class="sg-r"><span>Taking payments</span><s>Stripe Checkout</s><span class="sg-tick">&#10003;</span></div>
+          <div class="sg-r"><span>Video &amp; session notes</span><s>Zoom + Otter</s><span class="sg-tick">&#10003;</span></div>
+          <div class="sg-r"><span>Courses &amp; products</span><s>Kajabi / Teachable</s><span class="sg-tick">&#10003;</span></div>
+          <div class="sg-r"><span>Your profile page</span><s>A website</s><span class="sg-tick">&#10003;</span></div>
+          <div class="sg-r"><span>Reminders &amp; follow-up</span><s>ManyChat / Mailchimp</s><span class="sg-tick">&#10003;</span></div>
+        </div>
+        <div class="sg-save sg-rv">
+          <small>Separate tools, per month</small>
+          <div class="sg-big"><s>$343.97</s></div>
+          <small>Stageo Premium, per month</small>
+          <div class="sg-big">$149</div>
+          <small>You keep, every month</small>
+          <div class="sg-keep">$194.97</div>
+          <p>Based on Stageo's published comparison of typical tool subscriptions. Your own stack may cost more or less.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="sg-wrap">
+      <div class="sg-center">
+        <span class="sg-eyebrow">What's inside</span>
+        <h2 class="sg-display sg-rv">Eight things, one login.</h2>
+        <p class="sg-lead sg-rv">No tier gating. Premium gets every feature.</p>
+      </div>
+      <div class="sg-feats">
+        <div class="sg-f sg-rv"><span class="sg-n">01</span><h3>Bookable profile</h3><p>Your own page clients can find, trust and book from.</p></div>
+        <div class="sg-f sg-rv"><span class="sg-n">02</span><h3>Flexible offers</h3><p>One-off sessions, packages and programmes.</p></div>
+        <div class="sg-f sg-rv"><span class="sg-n">03</span><h3>Held payments</h3><p>Paid at booking, released after the session.</p></div>
+        <div class="sg-f sg-rv"><span class="sg-n">04</span><h3>Self-running sessions</h3><p>Live video rooms with AI session notes.</p></div>
+        <div class="sg-f sg-rv"><span class="sg-n">05</span><h3>Automated reminders</h3><p>WhatsApp and email reminders so clients show up.</p></div>
+        <div class="sg-f sg-rv"><span class="sg-n">06</span><h3>On-demand products</h3><p>Sell courses and content while you sleep.</p></div>
+        <div class="sg-f sg-rv"><span class="sg-n">07</span><h3>Marketplace discovery</h3><p>Be found by clients already searching Stageo.</p></div>
+        <div class="sg-f sg-rv"><span class="sg-n">08</span><h3>StageReady AI</h3><p>Reviews your profile and offers, then gives you 3 priority fixes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEEP EVERY BOOKING (calculator) -->
+  <section style="background:var(--bg2)" id="sg-calc-sec">
+    <div class="sg-wrap sg-calc-wrap">
+      <div class="sg-rv">
+        <span class="sg-eyebrow">Keep more of every booking</span>
+        <h2 class="sg-display">0% commission.<br />Every session.</h2>
+        <p class="sg-lead">Commission-based platforms take a cut of every booking you earn. On Premium you pay a flat $149 a month and keep your bookings, minus standard Stripe fees.</p>
+      </div>
+      <div class="sg-calc sg-rv">
+        <div class="sg-sl">
+          <div class="sg-sl-top"><span>Average session price</span><b id="sg-vp">$150</b></div>
+          <input type="range" id="sg-p" min="20" max="600" step="10" value="150" aria-label="Average session price" />
+        </div>
+        <div class="sg-sl">
+          <div class="sg-sl-top"><span>Sessions per month</span><b id="sg-vs">12</b></div>
+          <input type="range" id="sg-s" min="1" max="100" step="1" value="12" aria-label="Sessions per month" />
+        </div>
+        <div class="sg-bars">
+          <div class="sg-barrow"><small><span>At 20% commission</span><b id="sg-c20">$360</b></small><div class="sg-track"><i id="sg-b20" style="background:#6b6b6b"></i></div></div>
+          <div class="sg-barrow"><small><span>At 10% commission</span><b id="sg-c10">$180</b></small><div class="sg-track"><i id="sg-b10" style="background:#8a8a8a"></i></div></div>
+          <div class="sg-barrow"><small><span>Stageo Premium (flat)</span><b>$149</b></small><div class="sg-track"><i id="sg-bp" style="background:var(--or)"></i></div></div>
+        </div>
+        <div class="sg-result" id="sg-res"></div>
+        <p class="sg-note">Estimate for comparison only. Stripe processing fees apply on every plan. Just starting out? The free Pro year may suit you better.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTECTED PAYMENTS -->
+  <section>
+    <div class="sg-wrap">
+      <span class="sg-eyebrow">Protected payments</span>
+      <h2 class="sg-display sg-rv">No-shows stop costing you.</h2>
+      <p class="sg-lead sg-rv">Clients pay when they book. You're paid out through Stripe, with identity-verified payouts.</p>
+      <div class="sg-flow sg-rv">
+        <div><span class="sg-n">1</span><h3>Client books &amp; pays</h3><p>Payment is taken at the moment of booking.</p></div>
+        <div><span class="sg-n">2</span><h3>Held until the session</h3><p>Funds are held securely while the session is upcoming.</p></div>
+        <div><span class="sg-n">3</span><h3>Released to you</h3><p>After the session, payment goes to your verified Stripe account.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREMIUM ONLY -->
+  <section style="background:var(--bg2)">
+    <div class="sg-wrap">
+      <span class="sg-eyebrow">Only on Premium</span>
+      <h2 class="sg-display sg-rv">More than software.</h2>
+      <div class="sg-only">
+        <div class="sg-rv"><h3>Stageo's ad rotation</h3><p>Ready profiles are eligible to appear in Stageo's own marketing, with no media spend or briefing from you. Placement and frequency aren't guaranteed.</p></div>
+        <div class="sg-rv"><h3>Hands-on support</h3><p>Hands-on help from the Stageo team as you set up and grow on the platform.</p></div>
+        <div class="sg-rv"><h3>Workshops &amp; mastermind</h3><p>Join member workshops and a mastermind circle with other professionals, plus extra capacity for offers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS: hidden until you add VERIFIED quotes. Delete style="display:none" to show. -->
+  <section style="display:none">
+    <div class="sg-wrap sg-center">
+      <span class="sg-eyebrow">From Premium members</span>
+      <h2 class="sg-display">In their words.</h2>
+      <div class="sg-feats" style="grid-template-columns:repeat(3,1fr);text-align:left">
+        <div class="sg-f"><p style="color:var(--ink)">"VERIFIED QUOTE 1"</p><h3>Name · Role · Country</h3></div>
+        <div class="sg-f"><p style="color:var(--ink)">"VERIFIED QUOTE 2"</p><h3>Name · Role · Country</h3></div>
+        <div class="sg-f"><p style="color:var(--ink)">"VERIFIED QUOTE 3"</p><h3>Name · Role · Country</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="sg-pricing">
+    <div class="sg-wrap sg-center">
+      <span class="sg-eyebrow">Pricing</span>
+      <h2 class="sg-display sg-rv">One plan. Everything in.</h2>
+      <div class="sg-price-card sg-rv">
+        <div class="sg-amt">$149<span>/month</span></div>
+        <div class="sg-per">About $4.97 a day · No contract · Cancel anytime</div>
+        <ul class="sg-list">
+          <li>0% booking commission</li>
+          <li>Bookable profile</li>
+          <li>Payments held until session</li>
+          <li>Live video + AI session notes</li>
+          <li>Courses &amp; on-demand products</li>
+          <li>WhatsApp &amp; email reminders</li>
+          <li>StageReady AI reviews</li>
+          <li>Marketplace discovery</li>
+          <li>Eligible for Stageo's ad rotation</li>
+          <li>Hands-on support</li>
+        </ul>
+        <a class="sg-btn" href="#" data-sg-start>Get Stageo Premium &rarr;</a>
+        <p class="sg-alt">Not ready for a subscription? <a href="#" id="sg-pro-link">Claim the free Pro year instead</a> (booking commission applies).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background:var(--bg2)">
+    <div class="sg-wrap">
+      <div class="sg-center"><span class="sg-eyebrow">FAQ</span><h2 class="sg-display sg-rv">Good questions.</h2></div>
+      <div class="sg-faq">
+        <div class="sg-q"><button type="button">Is there a contract?<span class="sg-plus">+</span></button><div class="sg-a"><p>No. Premium is $149, billed monthly, and you can cancel anytime.</p></div></div>
+        <div class="sg-q"><button type="button">What does 0% commission mean?<span class="sg-plus">+</span></button><div class="sg-a"><p>Stageo takes no cut of your bookings on Premium. Only standard Stripe processing fees apply.</p></div></div>
+        <div class="sg-q"><button type="button">How are payments protected?<span class="sg-plus">+</span></button><div class="sg-a"><p>Clients pay at booking. The payment is held until the session happens, then released to your Stripe account. Payouts go through Stripe's identity verification.</p></div></div>
+        <div class="sg-q"><button type="button">Will Stageo feature me in its ads?<span class="sg-plus">+</span></button><div class="sg-a"><p>Premium profiles are eligible for Stageo's marketing rotation, and ready profiles (photo, video intro, clear offer, open availability, a few reviews) are favoured. Eligibility isn't a guarantee of placement or frequency, so keep your own marketing running too.</p></div></div>
+        <div class="sg-q"><button type="button">Do I need tech skills?<span class="sg-plus">+</span></button><div class="sg-a"><p>No. Most coaches are live in about an hour: profile (~25 min), first offer (~20 min) and a StageReady AI review (~10 min).</p></div></div>
+        <div class="sg-q"><button type="button">Is there a free option?<span class="sg-plus">+</span></button><div class="sg-a"><p>Yes. Invited professionals can get Stageo Pro free for 12 months, then $59/month. Pro has booking commission (20% on a new client's first 4 sessions, 10% after), so Premium usually costs less once you're booking regularly.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="sg-final">
+    <div class="sg-wrap">
+      <h2 class="sg-display sg-rv">Put your practice <span class="sg-or">on one stage.</span></h2>
+      <p class="sg-lead sg-rv" style="margin:0 auto 30px">One platform, one bill, every booking yours.</p>
+      <a class="sg-btn" href="#" data-sg-start>Get Stageo Premium &rarr;</a>
+      <p class="sg-micro">$149/month · Cancel anytime</p>
+    </div>
+  </section>
+
+  <footer class="sg-footer">
+    <div class="sg-wrap">
+      <span>&copy; <span id="sg-yr"></span> Stageo</span>
+      <span><a href="#" data-sg-privacy target="_blank" rel="noopener">Privacy Policy</a><a href="#" data-sg-terms target="_blank" rel="noopener">Terms &amp; Conditions</a></span>
+    </div>
+  </footer>
+
+  <div class="sg-sticky" id="sg-sticky">
+    <small><b>Stageo Premium · $149/mo</b>0% commission · cancel anytime</small>
+    <a class="sg-btn sg-btn-sm" href="#" data-sg-start>Get Premium</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  /* ============================ CONFIG ============================ */
+  var CONFIG = {
+    START_URL: "https://premium.stageo.co/start-now",  // Premium checkout / sign-up
+    PRO_URL: "index.html",          // Page 1 of this funnel (Pro opt-in). Hidden link if empty.
+    PRIVACY_URL: "",
+    TERMS_URL: "",
+    PRICE: 149,
+    CURRENCY: "USD"
+  };
+  /* =============================================================== */
+
+  var root = document.getElementById('sgm');
+  if (!root) return;
+  var $ = function (s) { return root.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
+
+  // Attribution
+  var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
+  var qs = new URLSearchParams(window.location.search);
+  var last = {}, first = null;
+  try { last = JSON.parse(localStorage.getItem('sg_last') || '{}'); first = JSON.parse(localStorage.getItem('sg_first') || 'null'); } catch (e) {}
+  var inc = {}; KEYS.forEach(function (k) { if (qs.get(k)) inc[k] = qs.get(k); });
+  if (Object.keys(inc).length) {
+    last = inc; last.landed_at = new Date().toISOString(); if (!first) first = last;
+    try { localStorage.setItem('sg_last', JSON.stringify(last)); localStorage.setItem('sg_first', JSON.stringify(first)); } catch (e) {}
+  }
+  function withAttr(url) {
+    try { var u = new URL(url, window.location.href); KEYS.forEach(function (k) { if (last[k] && !u.searchParams.get(k)) u.searchParams.set(k, last[k]); }); return u.toString(); }
+    catch (e) { return url; }
+  }
+  function track(ev, data) { try { if (window.fbq) window.fbq('track', ev, data || {}); } catch (e) {} }
+
+  // CTAs
+  var start = withAttr(CONFIG.START_URL);
+  $$('[data-sg-start]').forEach(function (a) {
+    a.href = start;
+    a.addEventListener('click', function () { track('InitiateCheckout', { content_name: 'Stageo Premium', value: CONFIG.PRICE, currency: CONFIG.CURRENCY }); });
+  });
+  var pro = $('#sg-pro-link');
+  if (CONFIG.PRO_URL) pro.href = withAttr(CONFIG.PRO_URL); else pro.parentNode.style.display = 'none';
+  $$('[data-sg-privacy]').forEach(function (a) { if (CONFIG.PRIVACY_URL) a.href = CONFIG.PRIVACY_URL; else a.style.display = 'none'; });
+  $$('[data-sg-terms]').forEach(function (a) { if (CONFIG.TERMS_URL) a.href = CONFIG.TERMS_URL; else a.style.display = 'none'; });
+  $('#sg-yr').textContent = new Date().getFullYear();
+  $('.sg-logo').addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  // FAQ
+  $$('.sg-q').forEach(function (q) {
+    var b = q.querySelector('button'), a = q.querySelector('.sg-a');
+    b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', function () {
+      var o = q.classList.toggle('sg-open');
+      b.setAttribute('aria-expanded', o ? 'true' : 'false');
+      a.style.maxHeight = o ? a.scrollHeight + 'px' : '0px';
+    });
+  });
+
+  // Calculator
+  var p = $('#sg-p'), s = $('#sg-s');
+  var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  function calc() {
+    var rev = (+p.value) * (+s.value), c20 = rev * .2, c10 = rev * .1, max = Math.max(c20, CONFIG.PRICE);
+    $('#sg-vp').textContent = money(+p.value); $('#sg-vs').textContent = s.value;
+    $('#sg-c20').textContent = money(c20); $('#sg-c10').textContent = money(c10);
+    $('#sg-b20').style.width = (c20 / max * 100) + '%';
+    $('#sg-b10').style.width = (c10 / max * 100) + '%';
+    $('#sg-bp').style.width = (CONFIG.PRICE / max * 100) + '%';
+    var r = $('#sg-res');
+    if (c10 >= CONFIG.PRICE) r.textContent = 'On ' + money(rev) + '/month in bookings, Premium keeps ' + money(c10 - CONFIG.PRICE) + '–' + money(c20 - CONFIG.PRICE) + ' more in your pocket every month.';
+    else if (c20 > CONFIG.PRICE) r.textContent = 'On ' + money(rev) + '/month in bookings, Premium can save you up to ' + money(c20 - CONFIG.PRICE) + ' a month, depending on your commission rate.';
+    else r.textContent = 'At ' + money(rev) + '/month in bookings, commission would cost less than $149. Premium pays for itself once bookings pass about ' + money(CONFIG.PRICE / .2) + '–' + money(CONFIG.PRICE / .1) + ' a month.';
+  }
+  p.addEventListener('input', calc); s.addEventListener('input', calc); calc();
+
+  // Reveal, ViewContent, sticky CTA
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('sg-in'); io.unobserve(e.target); } }); }, { threshold: .12 });
+    $$('.sg-rv').forEach(function (el) { io.observe(el); });
+    var sent = false;
+    var vc = new IntersectionObserver(function (es) { if (es[0].isIntersecting && !sent) { sent = true; track('ViewContent', { content_name: 'Premium pricing', value: CONFIG.PRICE, currency: CONFIG.CURRENCY }); vc.disconnect(); } }, { threshold: .3 });
+    vc.observe($('#sg-pricing'));
+    var st = $('#sg-sticky');
+    var so = new IntersectionObserver(function (es) { st.classList.toggle('sg-show', !es[0].isIntersecting && es[0].boundingClientRect.top < 0); });
+    so.observe($('#sg-hero-cta'));
+  } else { $$('.sg-rv').forEach(function (el) { el.classList.add('sg-in'); }); }
+})();
+</script>
+</body></html>
